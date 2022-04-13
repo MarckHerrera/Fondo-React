@@ -1,5 +1,6 @@
-import './App.css';
+import './scss/App.scss';
 import React from 'react';
+import camaleon from './assets/camaleon3.png';
 
 function App() {
 let fullcolor = [
@@ -1579,22 +1580,29 @@ function mostrarNombreColor(){
   setNombresitos (fullcolor[numero][1])
 
   document.body.style.backgroundColor = `#${color}`;
+  document.class.card.style.backgroundColor = `#${color}`;
 
 }
 
   return (
     <div className="App">
-      
-    <div>
-      <p>
-        El color es : {nombresitos}
-      </p>
-      <button onClick={()=>{mostrarNombreColor()}}>
-      Hola
-      </button>
-      
-    </div>
 
+
+    <div class="grid__item">
+    <div class="card" >
+    <div class="card" align="center">
+    <img src={camaleon}/>
+    </div>
+      <div class="card__content">
+        <h1 class="card__header">El color de fondo es: {nombresitos}</h1>
+        <button class="card__btn" onClick={()=>{mostrarNombreColor()}}>Cambiar Color</button>
+        
+      </div>
+    </div>
+  </div>
+
+    
+  
     </div>
   );
 }
